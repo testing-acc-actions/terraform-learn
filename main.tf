@@ -1,11 +1,28 @@
 terraform {
-  required_version = ">= 1.0"
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
+    }
+  }
 }
 
-locals {
-  project_name = "Terraform Learning"
+provider "aws" {
+  region = "ap-south-1"
 }
 
-output "project" {
-  value = local.project_name
+resource "aws_s3_bucket" "demo" {
+  bucket = "my-demo-bucket-12345"
 }
+
+resource "aws_instance" "web" {
+  ami           = "ami-03f4878755434977f"
+  instance_type = "t2.micro"
+}
+
+output "bucket_name" {
+  value = aws_s3_bucket.demo.bucket
+}
+
+
+
