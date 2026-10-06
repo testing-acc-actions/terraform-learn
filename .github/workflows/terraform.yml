@@ -1,1 +1,24 @@
+name: Terraform Pipeline
 
+on:
+  workflow_dispatch:
+
+jobs:
+
+  terraform:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: List Terraform Files
+        run: ls -la
+
+      - name: Show Terraform Files
+        run: |
+          cat main.tf
+          cat variables.tf
+          cat outputs.tf
