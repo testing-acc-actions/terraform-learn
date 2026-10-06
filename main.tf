@@ -15,7 +15,7 @@ resource "aws_subnet" "main" {
   tags = {
     Name = "subnet_block"
   }
-
+}
 resource "aws_s3_bucket" "example" {
   bucket = "my-tf-test-bucket"
 
@@ -24,4 +24,3 @@ resource "aws_s3_bucket" "example" {
   }
 }
 
-}
