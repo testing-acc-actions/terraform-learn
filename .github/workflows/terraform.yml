@@ -17,8 +17,7 @@ jobs:
       - name: List Terraform Files
         run: ls -la
 
-      - name: Show Terraform Files
-        run: |
-          cat main.tf
-          cat variables.tf
-          cat outputs.tf
+      - name: show main.tf
+        run: cat main.tf
+
+    
