@@ -22,3 +22,12 @@ jobs:
       - name: Terraform Format Check
         run: terraform fmt
 
+      - name: List Terraform Files
+        run: ls -la
+
+      - name: show main.tf
+        run: cat main.tf
+
+      - name: Terraform Plan
+        run: terraform plan
+
