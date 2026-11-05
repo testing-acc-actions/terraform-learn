@@ -2,5 +2,5 @@ output "environment_name" {
   value = "dev"
 }
 output "private_Ip" {
-  value = main.aws_subnet
+  value = aws_subnet.main.id
 }
