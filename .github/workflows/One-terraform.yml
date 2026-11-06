@@ -28,6 +28,3 @@ jobs:
       - name: show main.tf
         run: cat main.tf
 
-      - name: Terraform Plan
-        run: terraform plan
-
